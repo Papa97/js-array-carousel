@@ -21,6 +21,7 @@ const news = [
     'Omnis perferendis repellat quas reprehenderit a ut',
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit'
 ];
+
 let indice = 0 ;
 
 let imgTop = document.querySelector('.img-top');
@@ -28,7 +29,6 @@ let imgTop = document.querySelector('.img-top');
 let titolo = document.querySelector('.titolo');
 
 let active = document.getElementsByClassName('img-top-none');
-
 
 let newsDesc = document.querySelector('.desc');
 newsDesc.innerHTML = `${news[indice]}`;
@@ -46,14 +46,17 @@ for (let i = 0; i<immagini.length; i++) {
 const down = document.querySelector('.down-arrow');
 
 down.addEventListener('click', function(){
-    if ( indice < immagini.length  )
-    indice = indice + 1;
+    if ( indice < immagini.length - 1 ){
+    active[indice].classList.add('active-img'); 
+    active[indice].classList.remove('img-top-none');
+    indice = indice + 1 ;
     console.log(indice)
     titolo.innerHTML = `<h3>${luoghi[indice]}</h3>`;
     newsDesc.innerHTML = `${news[indice]}`;
-    active.remove('img-top-none');
-    active.add('active-img');
-
+ 
+    } else {
+        indice = 0 - 1;
+    }
 });
 
 const up = document.querySelector ('.up-arrow');
@@ -64,10 +67,10 @@ up.addEventListener ('click' ,function(){
     console.log(indice);
     titolo.innerHTML = `<h3>${luoghi[indice]}</h3>`;
     newsDesc.innerHTML = `${news[indice]}`;
-    active.remove('img-top-none');
-    active.add('active-img')
+    active[indice].classList.remove('img-top-none');
+    active[indice].classList.add('active-img');
+    } else {
+        indice = 5;
     }
 })
-
-
 
