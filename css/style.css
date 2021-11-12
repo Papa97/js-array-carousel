@@ -28,7 +28,7 @@
   position: relative;
 }
 
-.img-top {
+.img-top-container {
   height: 100%;
 }
 
@@ -40,6 +40,7 @@
 .vertical-img {
   width: 25%;
   position: relative;
+  background-color: black;
 }
 
 .cont-text-bt {
@@ -61,11 +62,13 @@
   transform: translateX(-50%);
   width: 25px;
   height: 25px;
-  background-color: rgb(100, 100, 100);
+  background-color: rgb(209, 209, 209);
   text-align: center;
   line-height: 25px;
   border-radius: 50%;
-  opacity: 0.75;
+  opacity: 1;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .up-arrow {
@@ -86,4 +89,12 @@
   width: 100%;
   object-fit: cover;
   opacity: 0.5;
+}
+
+.img-top-none {
+  display: none;
+}
+
+.active-img {
+  display: block;
 }

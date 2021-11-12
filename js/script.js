@@ -21,19 +21,46 @@ const news = [
     'Omnis perferendis repellat quas reprehenderit a ut',
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit'
 ];
+let indice = 0 ;
 
 let imgTop = document.querySelector('.img-top');
-imgTop.innerHTML = `<img src="${immagini[0]}"/>`;
 
 let titolo = document.querySelector('.titolo');
-titolo.innerHTML = `<h3>${luoghi[0]}</h3>`;
 
 let newsDesc = document.querySelector('.desc');
-newsDesc.innerHTML = `${news[0]}`;
+newsDesc.innerHTML = `${news[indice]}`;
 
 
 let verticalImg = document.querySelector('.vertical-img');
 // inserimento immagini nella sezione a destra
 for (let i = 0; i<immagini.length; i++) {
-    verticalImg.innerHTML += `<div class="cont-img-vert"><img src="${immagini[i]}" /> </div>`
+    verticalImg.innerHTML += `<div class="cont-img-vert"><img src="${immagini[i]}" /> </div>`;
+    imgTop.innerHTML +=  `<div class="img-top-none"><img src="${immagini[i]}"  /> </div>`;
 }
+
+
+
+const down = document.querySelector('.down-arrow');
+
+down.addEventListener('click', function(){
+    if ( indice < immagini.length  )
+    indice = indice + 1;
+    console.log(indice)
+    titolo.innerHTML = `<h3>${luoghi[indice]}</h3>`;
+    newsDesc.innerHTML = `${news[indice]}`;
+});
+
+const up = document.querySelector ('.up-arrow');
+
+up.addEventListener ('click' ,function(){
+    if (indice > 0) {
+    indice = indice - 1 ;
+    console.log(indice);
+    titolo.innerHTML = `<h3>${luoghi[indice]}</h3>`;
+    newsDesc.innerHTML = `${news[indice]}`;
+    }
+})
+
+
+
+let active = document.getElementsByClassName('img-top-none');
