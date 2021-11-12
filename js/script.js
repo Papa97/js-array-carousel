@@ -67,8 +67,10 @@ up.addEventListener ('click' ,function(){
     console.log(indice);
     titolo.innerHTML = `<h3>${luoghi[indice]}</h3>`;
     newsDesc.innerHTML = `${news[indice]}`;
-    active[indice].classList.remove('img-top-none');
     active[indice].classList.add('active-img');
+    active[indice].classList.remove('img-top-none');
+    active[indice + 1 ].classList.add('img-top-none');
+    active[indice + 1 ].classList.remove('active-img');
     } else {
         indice = 5;
     }
