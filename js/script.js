@@ -27,6 +27,9 @@ let imgTop = document.querySelector('.img-top');
 
 let titolo = document.querySelector('.titolo');
 
+let active = document.getElementsByClassName('img-top-none');
+
+
 let newsDesc = document.querySelector('.desc');
 newsDesc.innerHTML = `${news[indice]}`;
 
@@ -48,6 +51,9 @@ down.addEventListener('click', function(){
     console.log(indice)
     titolo.innerHTML = `<h3>${luoghi[indice]}</h3>`;
     newsDesc.innerHTML = `${news[indice]}`;
+    active.remove('img-top-none');
+    active.add('active-img');
+
 });
 
 const up = document.querySelector ('.up-arrow');
@@ -58,9 +64,10 @@ up.addEventListener ('click' ,function(){
     console.log(indice);
     titolo.innerHTML = `<h3>${luoghi[indice]}</h3>`;
     newsDesc.innerHTML = `${news[indice]}`;
+    active.remove('img-top-none');
+    active.add('active-img')
     }
 })
 
 
 
-let active = document.getElementsByClassName('img-top-none');
