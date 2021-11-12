@@ -46,16 +46,18 @@ for (let i = 0; i<immagini.length; i++) {
 const down = document.querySelector('.down-arrow');
 
 down.addEventListener('click', function(){
-    if ( indice < immagini.length - 1 ){
-    active[indice].classList.add('active-img'); 
-    active[indice].classList.remove('img-top-none');
+    if ( indice < (immagini.length - 1) ){
+    active[indice].classList.add('img-top-none');
+    active[indice].classList.remove('active-img');
     indice = indice + 1 ;
+    active[indice].classList.remove('img-top-none');
+    active[indice].classList.add('active-img'); 
     console.log(indice)
     titolo.innerHTML = `<h3>${luoghi[indice]}</h3>`;
     newsDesc.innerHTML = `${news[indice]}`;
  
     } else {
-        indice = 0 - 1;
+        indice = 0 ;
     }
 });
 
